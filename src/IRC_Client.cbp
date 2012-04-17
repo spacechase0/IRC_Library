@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="IRC_Client" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="..\sc0-irc-d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="..\" />
+				<Option object_output="..\obj\Debug\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lsc0-utility-d" />
+					<Add option="-lsfml-network-d" />
+					<Add option="-lsfml-system-d" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="..\sc0-irc" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="..\" />
+				<Option object_output="..\obj\Release\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lsc0-utility" />
+					<Add option="-lsfml-network" />
+					<Add option="-lsfml-system" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="-langelscript" />
+		</Linker>
+		<Unit filename="irc\Client.cpp" />
+		<Unit filename="irc\Client.h" />
+		<Unit filename="irc\Client\ChannelEvents.inl" />
+		<Unit filename="irc\Client\EventProcessor.inl" />
+		<Unit filename="irc\Client\ListEvents.inl" />
+		<Unit filename="irc\Client\MessageEvents.inl" />
+		<Unit filename="irc\Client\ModeEvents.inl" />
+		<Unit filename="irc\Client\MotdEvents.inl" />
+		<Unit filename="irc\Client\NameEvents.inl" />
+		<Unit filename="irc\Client\PrefixProcessor.inl" />
+		<Unit filename="irc\Event.cpp" />
+		<Unit filename="irc\Event.h" />
+		<Unit filename="irc\Event\Type.inl" />
+		<Unit filename="irc\Mode.h" />
+		<Unit filename="irc\ServerStat.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
