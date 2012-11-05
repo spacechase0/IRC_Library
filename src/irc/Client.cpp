@@ -26,8 +26,7 @@
 
 #include <iostream>
 
-#include <util/Convert.h>
-#include <util/Tokenize.h>
+#include <util/String.hpp>
 
 namespace irc
 {
@@ -680,10 +679,17 @@ namespace irc
 				char tmpBuffer[ 512 ] = "";
 				size_t received = 0;
 				#define RECEIVE_LOOP receiveData( socket, tmpBuffer, received )
-				for ( auto status = RECEIVE_LOOP; status == sf::Socket::Done; status = RECEIVE_LOOP )
+				sf::Socket::Status status;
+				for ( status = RECEIVE_LOOP; status == sf::Socket::Done; status = RECEIVE_LOOP )
 				{
 					std::string tmpStr( tmpBuffer, received );
 					buffer += tmpStr;
+				}
+				
+				if ( status == sf::Socket::Disconnected or status == sf::Socket::Error )
+				{
+					socket.disconnect();
+					break;
 				}
 				#undef RECEIVE_LOOP
 				
@@ -701,7 +707,7 @@ namespace irc
 			}
 			
 			// Messages
-			//if ( hasReceived )
+			if ( hasReceived )
 			{
 				sf::Lock lock( messageMutex );
 				

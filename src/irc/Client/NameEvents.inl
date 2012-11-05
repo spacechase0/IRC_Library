@@ -49,3 +49,10 @@ else if ( tokens[ 0 ] == "366" )
 	}
 	event.message = line;
 }
+else if ( tokens[ 0 ] == "NICK" )
+{
+	event.type = Event::Nick;
+	
+	eraseToken();
+	event.message = line;
+}

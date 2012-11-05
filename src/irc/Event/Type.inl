@@ -32,6 +32,7 @@ enum Type
 	Join,
 	Part,
 	Quit,
+	Nick,
 	
 	// Responses
 	TraceLink = 200,
@@ -56,7 +57,7 @@ enum Type
 	ServiceInfo = 331, // 6.3 Reserved numerics.
 	EndOfServices = 232,
 	Service = 233, // 6.3 Reserved numerics.
-	ServiceLise = 234,
+	ServiceList = 234,
 	ServiceListEnd = 235, // 6.3 Reserved numerics.
 	StatsLine = 241,
 	StatsUptime = 242,

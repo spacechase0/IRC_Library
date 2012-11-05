@@ -2,3 +2,6 @@ obj
 src.zip
 *.dll
 *.layout
+*.a
+*.html
+*.depend
