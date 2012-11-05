@@ -22,7 +22,7 @@
 //
 ////////////////////////////////////////////////////////////
 
-#include "irc/Client.h"
+#include "irc/Client.hpp"
 
 #include <iostream>
 

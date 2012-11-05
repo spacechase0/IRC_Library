@@ -22,15 +22,15 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef IRC_CLIENT_H
-#define IRC_CLIENT_H
+#ifndef IRC_CLIENT_HPP
+#define IRC_CLIENT_HPP
 
 #include <SFML/Network.hpp>
 #include <queue>
 
-#include "irc/Event.h"
-#include "irc/Mode.h"
-#include "irc/ServerStat.h"
+#include "irc/Event.hpp"
+#include "irc/Mode.hpp"
+#include "irc/ServerStat.hpp"
 
 namespace irc
 {
@@ -135,4 +135,4 @@ namespace irc
 	};
 }
 
-#endif // IRC_CLIENT_H
+#endif // IRC_CLIENT_HPP

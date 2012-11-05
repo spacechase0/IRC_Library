@@ -47,7 +47,7 @@
 			<Add option="-langelscript" />
 		</Linker>
 		<Unit filename="irc\Client.cpp" />
-		<Unit filename="irc\Client.h" />
+		<Unit filename="irc\Client.hpp" />
 		<Unit filename="irc\Client\ChannelEvents.inl" />
 		<Unit filename="irc\Client\EventProcessor.inl" />
 		<Unit filename="irc\Client\ListEvents.inl" />
@@ -57,10 +57,10 @@
 		<Unit filename="irc\Client\NameEvents.inl" />
 		<Unit filename="irc\Client\PrefixProcessor.inl" />
 		<Unit filename="irc\Event.cpp" />
-		<Unit filename="irc\Event.h" />
+		<Unit filename="irc\Event.hpp" />
 		<Unit filename="irc\Event\Type.inl" />
-		<Unit filename="irc\Mode.h" />
-		<Unit filename="irc\ServerStat.h" />
+		<Unit filename="irc\Mode.hpp" />
+		<Unit filename="irc\ServerStat.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

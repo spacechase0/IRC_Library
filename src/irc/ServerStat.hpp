@@ -22,8 +22,8 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef IRC_SERVERSTAT_H
-#define IRC_SERVERSTAT_H
+#ifndef IRC_SERVERSTAT_HPP
+#define IRC_SERVERSTAT_HPP
 
 namespace irc
 {

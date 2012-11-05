@@ -22,46 +22,37 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef IRC_MODE_H
-#define IRC_MODE_H
+#ifndef IRC_EVENT_HPP
+#define IRC_EVENT_HPP
+
+#include <string>
 
 namespace irc
 {
-	namespace Mode
+	class Event
 	{
-		enum Channel
-		{
-			Anonymous = 1 << 0, // a
-			Invite    = 1 << 1, // i
-			Moderated = 1 << 2, // m
-			NoOutside = 1 << 3, // n
-			Quiet     = 1 << 4, // q
-			Private   = 1 << 5, // p
-			Secret    = 1 << 6, // s
-			Reop      = 1 << 7, // r
-			OpTopic   = 1 << 8, // t
+		public:
+			#include "irc/Event/Type.inl"
 			
-			// These shouldn't be done Add/RemoveChannelFlags
-			ChanOwner = 1 << 9, // O
-			ChannelOp = 1 << 10, // o
-			Voice     = 1 << 11, // v
+			Event();
+			Event( const std::string& thePrefix, Type theType );
+			Event( const std::string& thePrefix, Type theType, const std::string& theMessage );
+			Event( const std::string& thePrefix, Type theType, const std::string& theChannel, const std::string& theMessage );
 			
-			Key       = 1 << 12, // k
-			Limit     = 1 << 13, // l
+			Type type;
 			
-			Ban       = 1 << 14, // b
-			BanExcept = 1 << 15, // e
-			InviMask  = 1 << 16, // I
-		};
-		
-		enum User
-		{
-			Invisible    = 1 << 0, // i
-			ServerNotice = 1 << 1, // s
-			Wallops      = 1 << 2, // w
-			Operator     = 1 << 3, // o
-		};
-	}
+			std::string prefix;
+			std::string nick;
+			std::string user;
+			std::string host;
+			
+			std::string channel;
+			std::string message;
+			std::string amount;
+			std::string mask;
+			bool add;
+			long mode;
+	};
 }
 
-#endif // IRC_MODE_H
+#endif // IRC_EVENT_H

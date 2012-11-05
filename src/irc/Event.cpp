@@ -22,7 +22,7 @@
 //
 ////////////////////////////////////////////////////////////
 
-#include "irc/Event.h"
+#include "irc/Event.hpp"
 
 namespace irc
 {
